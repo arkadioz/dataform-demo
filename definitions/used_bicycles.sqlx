@@ -1,0 +1,16 @@
+config {
+    type: "table",
+    name: "used_bicycles",
+    dependencies: ["available_bicycles_dataform"]
+}
+
+SELECT
+  bicycle_id AS bike_id,
+  manufacturer,
+  current_date AS creation_date,
+  CAST(NULL AS json) AS DATA
+  -- Specify the data field as a JSON type
+FROM
+  ${ref("available_bicycles_dataform")}
+WHERE
+  bicycle_id IS NOT NULL

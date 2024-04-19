@@ -1,0 +1,11 @@
+config {
+    type: "view",
+}
+
+  -- Reads data from available_bicycles table
+SELECT
+  ab.bicycle_id, ab.manufacturer
+FROM
+  `ark-learn-project.bicycles.available_bicycles` AS ab
+WHERE
+  manufacturer = "CHINA"
