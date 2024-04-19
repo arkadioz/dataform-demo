@@ -1,5 +1,5 @@
 config {
-    type: "table",
+    type: "incremental",
     name: "used_bicycles",
     dependencies: ["available_bicycles_dataform"]
 }
@@ -9,8 +9,9 @@ SELECT
   manufacturer,
   current_date AS creation_date,
   CAST(NULL AS json) AS DATA,
-  color
-  -- Specify the data field as a JSON type
+  color,
+  CURRENT_DATETIME AS creation_date_time
+  
 FROM
   ${ref("available_bicycles_dataform")}
 WHERE
