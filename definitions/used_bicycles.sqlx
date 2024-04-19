@@ -8,7 +8,8 @@ SELECT
   bicycle_id AS bike_id,
   manufacturer,
   current_date AS creation_date,
-  CAST(NULL AS json) AS DATA
+  CAST(NULL AS json) AS DATA,
+  color
   -- Specify the data field as a JSON type
 FROM
   ${ref("available_bicycles_dataform")}

@@ -1,11 +1,10 @@
 config {
     type: "view",
+    name: "available_bicycles_dataform"
 }
 
-  -- Reads data from available_bicycles table
+  -- Reads data from available_bicycles table and creates the available_bicycles_dataform view
 SELECT
-  ab.bicycle_id, ab.manufacturer
+  ab.bicycle_id, ab.manufacturer, ab.color
 FROM
   `ark-learn-project.bicycles.available_bicycles` AS ab
-WHERE
-  manufacturer = "CHINA"
