@@ -3,18 +3,12 @@ config {
     name: "available_bicycles_dataform"
 }
 
-CREATE TEMP FUNCTION
-  myJsFunc(input STRING)
-  RETURNS STRING
-  LANGUAGE js AS r"""
-  return input + "hi!";
-""";
 -- Reads data from available_bicycles table and creates the available_bicycles_dataform view
 SELECT
   ab.bicycle_id,
   ab.manufacturer,
   ab.color,
-  myJsFunc(ab.color) AS added_color
+  ab.datos
 FROM
   `ark-learn-project.bicycles.available_bicycles` AS ab
 LEFT JOIN
