@@ -8,7 +8,8 @@ SELECT
   ab.bicycle_id,
   ab.manufacturer,
   ab.color,
-  ab.datos
+  ab.datos,
+  ab.objeto
 FROM
   `ark-learn-project.bicycles.available_bicycles` AS ab
 LEFT JOIN
