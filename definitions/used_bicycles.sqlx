@@ -10,7 +10,6 @@ SELECT
   current_date AS creation_date,
   CAST(NULL AS json) AS DATA,
   color,
-  CURRENT_DATETIME() AS creation_date_time,
   datos
 FROM
   ${ref("available_bicycles_dataform")}
