@@ -12,7 +12,7 @@ SELECT
   color,
   datos,
   CURRENT_DATETIME() AS creation_date_time,
-  JSON_VALUE(datos, '$.key1') AS key_1
+  JSON_VALUE(datos, '$.key1') AS key_1,
   JSON_VALUE(datos.nested, '$.nested_key1') AS nested_key_1
 FROM
   ${ref("available_bicycles_dataform")}
