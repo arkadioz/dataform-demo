@@ -15,7 +15,6 @@ SELECT
   JSON_VALUE(datos, '$.key1') AS key_1,
   JSON_VALUE(datos.nested, '$.nested_key1') AS nested_key_1,
   objeto AS objeto_json,
-  CAST(NULL AS STRING) AS marca_carro
   objeto.person.cars AS owned_cars
 FROM
   ${ref("available_bicycles_dataform")}
